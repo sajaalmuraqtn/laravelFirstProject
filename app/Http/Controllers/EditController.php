@@ -39,7 +39,7 @@ class EditController extends Controller
         $find->email = $request->email;
 
         if($find->save()){
-            return redirect()->back()->with('message', 'edit succsessful');
+            return redirect()->action([HomeController::class, 'index'])->with('message', 'edit succsessful');
         }
     }
 

@@ -5,10 +5,6 @@
 <div class="container">
      <h2>ADD student</h2>
 
-     @if (session('message'))
-      <p class="text-danger">{{session('message')}}</p>
-     @endif
-
         <form action="{{ route('user.create') }}" method="post">
             @csrf
             <div class="mb-3">

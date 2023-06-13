@@ -4,7 +4,9 @@
 
 <div class="container">
     <div class="row justify-content-center">
-
+        @if (session('message'))
+        <p class="text-danger">{{session('message')}}</p>
+        @endif
 
         <table class="table">
             <thead>
@@ -12,7 +14,8 @@
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
                 <th scope="col">Role</th>
-                <th scope="col">Operation</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
               </tr>
             </thead>
             <tbody>
@@ -21,7 +24,8 @@
                   <td>{{$key->id}}</th>
                   <td>{{$key->name}}</td>
                   <td>{{$key->role}}</td>
-                  <td><a class="btn btn-info btn-sm" href="{{ route('user.edit',['id'=>$key->id]) }}">edit</a></td>
+                  <td><a class="btn btn-info btn-sm" href="{{ route('user.edit',['id'=>$key->id]) }}">Edit</a></td>
+                  <td><a class="btn btn-danger btn-sm" href="{{ route('user.delete',['id'=>$key->id]) }}">Delete</a></td>
                    </tr>
                 @endforeach
             </tbody>

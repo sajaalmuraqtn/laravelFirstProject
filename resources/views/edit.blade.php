@@ -5,9 +5,6 @@
 <div class="container">
      <h2>Edit student</h2>
 
-     @if (session('message'))
-      <p class="text-danger">{{session('message')}}</p>
-     @endif
 
         <form action="{{ route('user.update', ['id' => $user->id]) }}" method="post">
             @csrf

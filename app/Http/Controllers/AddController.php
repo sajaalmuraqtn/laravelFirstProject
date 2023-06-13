@@ -34,21 +34,25 @@ class AddController extends Controller
         $userData->name = $request->name;
         $userData->phone = $request->phone;
         $userData->role = $request->role;
-        $userData->email = "sami@gmail.com";
+        $userData->email = "rana@gmail.com";
         $userData->password = Hash::make(123456789);
 
         if($userData->save()){
-            return redirect()->back()->with('message', 'add succsessful');
+            return redirect()->action([HomeController::class, 'index'])->with('message', 'add succsessful');
         }
     }
-    // public function edit($id){
-    //     $find = User::find($id);
-    //     return view('edit',['user'=>$find]);
-    // }
-    // public function editdata($id){
-    //     $find = User::find($id);
-    //     return view('edit',['user'=>$find]);
-    // }
+
+    public function delete($id){
+        $user = User::find($id);
+
+        if($user){
+            $user->delete();
+            return redirect()->action([HomeController::class, 'index'])->with('message', 'Delete successful');
+        }
+        else{
+            return redirect()->action([HomeController::class, 'index'])->with('message', 'User not found');
+        }
+    }
+    }
 
 
-}

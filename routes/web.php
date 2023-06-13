@@ -27,3 +27,4 @@ Route::post('/create', [App\Http\Controllers\AddController::class, 'create'])->n
 
 Route::get('/edit/{id}', [App\Http\Controllers\EditController::class, 'edit'])->name('user.edit');
 Route::post('/update/{id}', [App\Http\Controllers\EditController::class, 'update'])->name('user.update');
+Route::get('/delete/{id}', [App\Http\Controllers\AddController::class, 'delete'])->name('user.delete');
