@@ -34,6 +34,7 @@ class AddController extends Controller
         $userData->name = $request->name;
         $userData->phone = $request->phone;
         $userData->role = $request->role;
+        $userData->status = 'active';
         $userData->email = "rana@gmail.com";
         $userData->password = Hash::make(123456789);
 

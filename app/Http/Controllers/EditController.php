@@ -37,6 +37,7 @@ class EditController extends Controller
         $find->name = $request->name;
         $find->phone = $request->phone;
         $find->email = $request->email;
+        $find->status = $request->status;
 
         if($find->save()){
             return redirect()->action([HomeController::class, 'index'])->with('message', 'edit succsessful');

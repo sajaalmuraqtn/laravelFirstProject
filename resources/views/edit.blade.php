@@ -20,6 +20,10 @@
               <label for="exampleInputEmail" class="form-label">Email</label>
               <input type="email" name="email" value="{{ $user->email }}" class="form-control" id="exampleInputEmail">
             </div>
+            <div class="mb-3">
+              <label for="exampleInputStatus" class="form-label">Status</label>
+              <input type="text" name="status" value="{{ $user->status }}" class="form-control" id="exampleInputStatus">
+            </div>
 
 
             <button type="submit"  value="" class="btn btn-primary col-md-2 "> Edit</button>

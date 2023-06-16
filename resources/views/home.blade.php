@@ -14,6 +14,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
                 <th scope="col">Role</th>
+                <th scope="col">status</th>
                 <th scope="col">Edit</th>
                 <th scope="col">Delete</th>
               </tr>
@@ -24,7 +25,14 @@
                   <td>{{$key->id}}</th>
                   <td>{{$key->name}}</td>
                   <td>{{$key->role}}</td>
+                  <td @if ($key->status==0)
+                  class="bg-danger"
+                  @else
+                  class="bg-primary"
+                  @endif >{{$key->status}}</td>
                   <td><a class="btn btn-info btn-sm" href="{{ route('user.edit',['id'=>$key->id]) }}">Edit</a></td>
+
+
                   <td><a class="btn btn-danger btn-sm" href="{{ route('user.delete',['id'=>$key->id]) }}">Delete</a></td>
                    </tr>
                 @endforeach
