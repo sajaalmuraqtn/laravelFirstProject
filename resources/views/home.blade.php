@@ -26,9 +26,9 @@
                   <td>{{$key->name}}</td>
                   <td>{{$key->role}}</td>
                   <td @if ($key->status==0)
-                  class="bg-danger"
+                  class="bg-danger text-white"
                   @else
-                  class="bg-primary"
+                  class="bg-success text-white"
                   @endif >{{$key->status}}</td>
                   <td><a class="btn btn-info btn-sm" href="{{ route('user.edit',['id'=>$key->id]) }}">Edit</a></td>
 
